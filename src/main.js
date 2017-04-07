@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppContainer from './containers/AppContainer'
 
 // ========================================================
@@ -18,7 +19,7 @@ let render = () => {
   const routes = require('./routes/index').default(store)
 
   ReactDOM.render(
-    <AppContainer store={store} routes={routes} />,
+    <MuiThemeProvider><AppContainer store={store} routes={routes} /></MuiThemeProvider>,
     MOUNT_NODE
   )
 }
